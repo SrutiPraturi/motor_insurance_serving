@@ -9,7 +9,7 @@ from feature_engg import model_ready_data
 
 app = Flask(__name__)
 
-lime_data = pd.read_csv('assets/insurance_data_processed.csv').drop(columns = ['Payment'])
+lime_data = pd.read_csv('assets/insurance_processed_data.csv').drop(columns = ['Payment'])
 
 @app.route('/payment', methods = ['POST']) 
 def get_data():
