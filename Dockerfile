@@ -2,6 +2,7 @@ FROM python:3.8
 WORKDIR /app
 COPY feature_engg.py feature_engg.py
 COPY app.py app.py
+COPY explanation.py explanation.py
 COPY assets assets
 RUN pip install --upgrade pip
 RUN pip install numpy
