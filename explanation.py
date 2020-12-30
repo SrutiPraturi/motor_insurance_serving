@@ -8,7 +8,7 @@ import os
 
 
 
-def explain_prediction(train_data , model , explain_data,mode):
+def explain_prediction(data , model , explain_data,mode):
     
     
     #data = pd.read_csv(train_data)
