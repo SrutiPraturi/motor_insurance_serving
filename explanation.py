@@ -9,7 +9,7 @@ import os
 
 class Explanation:
     
-    def explain_prediction(data , model , explain_data,mode):
+    def explain_prediction(self,data , model , explain_data,mode):
     
     
         #data = pd.read_csv(train_data)
