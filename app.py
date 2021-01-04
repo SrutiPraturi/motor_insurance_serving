@@ -8,7 +8,7 @@ import base64
 from feature_engg import model_ready_data
 
 app = Flask(__name__)
-
+explain = Explanation()
 lime_data = pd.read_csv('assets/insurance_processed_data.csv').drop(columns = ['Payment'])
 
 @app.route('/payment', methods = ['POST']) 
@@ -60,7 +60,7 @@ def get_data():
     return return_data
 
 if __name__ == "__main__":
-    explain = Explanation()
+    
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
     #app.run(port=8080)
         
