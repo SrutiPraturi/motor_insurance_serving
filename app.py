@@ -5,10 +5,11 @@ import numpy as np
 from flask import Flask, jsonify, request
 from explanation import Explanation
 import base64
-from feature_engg import model_ready_data
+from assets.feature_engg import FeatureEngg
 
 app = Flask(__name__)
 explain = Explanation()
+featureEngg = FeatureEngg()
 lime_data = pd.read_csv('assets/insurance_processed_data.csv').drop(columns = ['Payment'])
 
 @app.route('/payment', methods = ['POST']) 
@@ -33,7 +34,7 @@ def get_data():
     
     data = pd.DataFrame(columns = ['Kilometres','Zone','Bonus','Make','Insured','Claims'])
     data.loc[0,:] = predict_data
-    model_data = model_ready_data(data)
+    model_data = featureEngg.model_ready_data(data)
     
     print(model_data)
         
