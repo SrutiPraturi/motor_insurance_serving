@@ -3,7 +3,7 @@ import pickle
 import yaml
 import numpy as np 
 from flask import Flask, jsonify, request
-from explanation import explain_prediction
+from explanation import Explanation
 import base64
 from feature_engg import model_ready_data
 
@@ -43,7 +43,7 @@ def get_data():
     
     return_data['prediction'] = str(np.expm1(prediction))
     
-    result = explain_prediction(lime_data,model,model_data,'regression')
+    result = explanation.explain_prediction(lime_data,model,model_data,'regression')
     
     
     
@@ -60,6 +60,7 @@ def get_data():
     return return_data
 
 if __name__ == "__main__":
+    explanation = Explanation()
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
     #app.run(port=8080)
         
