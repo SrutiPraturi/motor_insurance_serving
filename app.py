@@ -43,7 +43,7 @@ def get_data():
     
     return_data['prediction'] = str(np.expm1(prediction))
     
-    result = explanation.explain_prediction(lime_data,model,model_data,'regression')
+    result = explain.explain_prediction(lime_data,model,model_data,'regression')
     
     
     
@@ -60,7 +60,7 @@ def get_data():
     return return_data
 
 if __name__ == "__main__":
-    explanation = Explanation()
+    explain = Explanation()
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
     #app.run(port=8080)
         
