@@ -42,7 +42,7 @@ def get_data():
     
     prediction = model.predict(np.array(model_data.iloc[0,:]).reshape(1,-1))
     
-    return_data['prediction'] = str(np.expm1(prediction))
+    return_data['prediction'] = str(round(np.expm1(prediction)),2)
     
     result = explain.explain_prediction(lime_data,model,model_data,'regression')
     
