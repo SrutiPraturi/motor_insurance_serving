@@ -12,6 +12,12 @@ explain = Explanation()
 featureEngg = FeatureEngg()
 lime_data = pd.read_csv('assets/insurance_processed_data.csv').drop(columns = ['Payment'])
 
+@app.route('/')
+def home():
+    file = 'swedish_motor_insurance.html'
+    print('Predict Payments' + file)
+    return render_template(file)
+
 @app.route('/payment', methods = ['POST']) 
 def predict_data():
 
