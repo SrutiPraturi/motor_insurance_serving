@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Motor Insurance</title>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+		<link type='text/css' rel='stylesheet' href='{{ url_for('static', filename='./style.css') }}'>
+	</head>
+
+	<body>
+		<div class="login">
+			<form id="form1" action="{{ url_for('home')}}">
+				<button type="submit" style="width: 100%;display: contents;font-size: 35px;" class="btn btn-primary btn-block btn-large">Infy Bank Application</button>
+			</form>
+			<!-- Form to enter new data for predictions  -->
+			<form action="{{ url_for('predict_data')}}" method="POST">
+				<input type="text" name="Kilometres" placeholder="Category of Distance driven by vehicle" required="required" /><br>
+				<input type="text" name="Zone" placeholder="Geographic Zone " required="required" /><br>
+				<input type="text" name="Bonus" placeholder="Recent Drivers Claim Experience" required="required" /><br>
+				<input type="text" name="Make" placeholder="Type of Automobile" required="required" /><br>
+				<input type="text" name="Insured" placeholder="Insured Amount" required="required" /><br>
+				<input type="text" name="Claims" placeholder="Number of Claims" required="required" /><br>
+				
+				</select><br>
+				<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+			</form><br>
+			<form id="form2" action="{{ url_for('after_eval')}}" method="POST" style="text-align: start;">
+			<table>
+				<tr>
+					<td><input type="hidden" name="ID" value={{ id }}></td>
+				</tr>
+				<tr>
+					<td>Predicted Output:</td>
+					<td><input type="text" name="Predicted" readonly value={{ pred }} /></td>
+				</tr>
+				<tr>
+					<td><button type="submit" class="btn btn-primary btn-block btn-large" style="margin-left: 50%;">Save</button></td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</body>
+</html>
