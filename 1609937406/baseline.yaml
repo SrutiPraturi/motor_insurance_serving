@@ -1,0 +1,33 @@
+Model R2: 0.8227031491652481
+features:
+- PLS
+- Kilometres_1
+- Kilometres_2
+- Kilometres_3
+- Kilometres_4
+- Kilometres_5
+- Zone_1
+- Zone_2
+- Zone_3
+- Zone_4
+- Zone_5
+- Zone_6
+- Zone_7
+- Bonus_1
+- Bonus_2
+- Bonus_3
+- Bonus_4
+- Bonus_5
+- Bonus_6
+- Bonus_7
+- Make_1
+- Make_2
+- Make_3
+- Make_4
+- Make_5
+- Make_6
+- Make_7
+- Make_8
+- Make_9
+test_RMSE: 44487.20256879464
+training_RMSE: 41630.07753295022
